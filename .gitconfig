@@ -1,0 +1,32 @@
+[user]
+  name = Antonio Terreno
+  email = @gmail.com 
+[alias]
+  up = !git fetch origin && git rebase origin/master
+  co = checkout
+  br = branch
+  ci = commit
+  st = status  
+  dff = diff -- ':!package-lock.json' ':!yarn.lock'
+  who = shortlog -s --
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'  
+  whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+  prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = /Users/antonio/.gitignore
+  editor = vim
+  autocrlf = input
+[apply]
+  whitespace = nowarn
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[github]
+  user = aterreno
+[merge]
+  tool = vim
